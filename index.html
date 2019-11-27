@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo || By Muhammad Ismail</title>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body style="background: grey ;">
+
+
+  <!--! header -->
+  <div class="header">
+    <h1 class="heading">Todo App</h1>
+    <nav>
+      <div><a href="./index.html" id="new" class="btn">New Todo</a>
+        <a href="./all.html" style='margin-left:30%' class="btn">All Todos</a></div>
+    </nav>
+  </div>
+  <!-- <div class="words">
+
+</div> -->
+  <!--  ! new todo div -->
+  <div class="visible" id="newDiv">
+    <h1 class="heading">Add new Todo</h1>
+    <div id="newStyle">
+
+      <!-- <button onclick="start()">Voice</button> -->
+      <input id="title" class="input" placeholder="title" required autocomplete="off" />
+      <label class="inp-label">Title:
+      </label>
+      <div class="words"></div>
+
+
+      <input type="time" class="input" id="time" placeholder="time" required autocomplete="off" />
+      <label class="inp-label">Time:</label>
+
+
+      <input id="description" class="input" placeholder="description" required autocomplete="off" />
+      <label class="inp-label">Description:</label>
+
+      <button class="btn  btn-add" onclick="newTodo()">Add</button>
+    </div>
+  </div>
+
+  <!-- ! Success div alert -->
+
+  <span class="outer">
+    <span class="inner">
+      <p><span class="suc-p">Title:</span> <span id="suc-title"></span> </p>
+      <p><span class="suc-p">Time:</span> <span id="suc-time"></span> </p>
+      <p><span class="suc-p">Description:</span> <span id="suc-des"></span> </p>
+      <p class="suc-para">Your todo has been aded!</p>
+    </span>
+  </span>
+
+
+
+  <script src="./js/node.js"></script>
+</body>
+
+</html>

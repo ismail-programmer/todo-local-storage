@@ -1,0 +1,307 @@
+@import 'https://fonts.googleapis.com/css?family=Playball&display=swap';
+* {
+  font-family: Playball;
+}
+
+/* ! voice */
+/* 
+.words {
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem 1rem 5rem;
+  background: -webkit-gradient(
+      linear,
+      0 0,
+      0 100%,
+      from(#d9eaf3),
+      color-stop(4%, #fff)
+    )
+    0 4px;
+  background-size: 100% 3rem;
+  position: relative;
+  line-height: 3rem;
+}
+
+p {
+  margin: 0 0 3rem;
+}
+
+.words:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  top: 0;
+  left: 30px;
+  bottom: 0;
+  border: 1px solid;
+  border-color: transparent #efe4e4;
+} */
+
+/* header div */
+.header {
+  height: auto;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  width: 960px;
+  margin: 2px auto;
+  text-align: center;
+  padding: 1%;
+}
+
+/*  general heading */
+
+.heading {
+  text-align: center;
+}
+
+/* buttons div */
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #404040;
+  color: #ffffff !important;
+  font-weight: 100;
+  padding: 20px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+
+.btn:hover {
+  color: #404040 !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px;
+  background: none;
+  box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.3s ease 0s;
+}
+
+/*! toogling divs styling */
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.inline {
+  display: inline-block;
+}
+
+.vis {
+  visibility: visible !important;
+}
+.actPos {
+  transform: translate(-50%, -50%) translateY(0) !important ;
+}
+
+/* ! new,all,edit,details todo div */
+
+#newStyle,
+.all,
+.editDiv,
+.details {
+  position: relative;
+  color: black;
+  font-size: 32px;
+  background: #f0f0f0;
+  width: 70%;
+  padding: 2%;
+  margin: 0 auto;
+}
+
+.input {
+  display: block;
+  width: 500px;
+  font-size: 1.5rem;
+  border: none;
+  margin: 1rem auto;
+  background: none;
+  padding: 0.5rem 1rem;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+  color: black;
+  text-transform: capitalize;
+}
+.inp-label {
+  width: 220px;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 3%;
+  display: inline-block;
+  transform: translateY(-200%) translateX(0);
+  transition: all 0.5s;
+  color: black;
+}
+
+.input:placeholder-shown + .inp-label {
+  visibility: hidden;
+  transform: translateY(-200%) translateX(85.5%);
+}
+
+.input:focus + .inp-label {
+  transform: translateY(-200%) translateX(0);
+  visibility: visible;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom: 3px solid #28b485;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.input:focus:invalid {
+  border-bottom: 3px solid red;
+}
+.input:valid {
+  border-bottom: 3px solid #28b485;
+}
+.input:focus:valid + .inp-label {
+  transform: translateY(-200%) translateX(0);
+}
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.btn-add {
+  display: block;
+  margin: 0 auto;
+  margin-top: 0;
+}
+
+/*!  Sucess div styles  */
+
+.outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  backdrop-filter: blur(3px);
+}
+
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(-200%);
+  width: 50%;
+  background: rgba(248, 238, 238, 0.7);
+  z-index: 100;
+  color: black;
+  transition: all 0.5s;
+  font-size: 1.5rem;
+}
+
+.suc-p {
+  display: inline-block;
+  width: 40%;
+  padding: 3%;
+  margin-right: 20px;
+}
+
+.suc-para {
+  color: black;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* ! more */
+.more {
+  display: inline-block;
+  margin-left: auto;
+  text-align: right;
+  height: 60px;
+  font-size: 15px;
+}
+.sibling {
+  display: none;
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  background: grey;
+  color: white;
+  z-index: 50;
+}
+
+.sibling > * {
+  width: 100%;
+  background-color: white;
+  border: none;
+  outline: none;
+  color: black;
+}
+
+.sibling > *:hover {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.more:hover + .sibling,
+.sibling:hover {
+  display: block;
+}
+
+/*  ! label */
+.labelI {
+  display: inline-block;
+  width: 80%;
+}
+
+/*  ! all div */
+.td-display {
+  width: 100%;
+  margin: 10px auto;
+  position: relative;
+  background: white;
+}
+
+/*  ! checkbox */
+
+input[type='checkbox']:checked ~ .cb-l {
+  animation: scale 0.5s cubic-bezier(0.5, 1.2, 0, 1.58);
+  background-image: url(../images/chk.png);
+  text-decoration: line-through;
+  color: #aaa !important;
+}
+input[type='checkbox'] {
+  display: none;
+}
+.cb-l {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 200;
+  display: inline-block;
+  width: 75%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 2px;
+  /* border-left: 4px solid #999; */
+  padding-left: 4rem;
+  background-image: url(../images/uncheck.png);
+  background-position: 15px 20px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+  transition: background-image 0.5s ease-in-out;
+  text-transform: capitalize;
+}
+@keyframes scale {
+  0% {
+    background-size: 35px;
+  }
+  50% {
+    background-size: 0;
+  }
+  100% {
+    background-size: 35px;
+  }
+}

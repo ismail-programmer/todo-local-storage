@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/index.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!--! header -->
+  <div class="header">
+    <h1 class="heading">Todo App</h1>
+    <nav>
+      <div><a href="./index.html" id="new" class="btn">New Todo</a>
+        <a href="./all.html" style='margin-left:30%' class="btn">All Todos</a></div>
+    </nav>
+  </div>
+
+  <!-- ! All todo  -->
+  <div id="allDiv" >
+    <h1 class="heading">All Todo</h1>
+    <div id="alltodos" class="all"></div>
+  </div>
+
+
+  <!--  ! Edit  -->
+  <div class="hidden" id="edit">
+    <h1 class="heading">Edit Your Todo</h1>
+    <div class="editDiv">
+
+      <input class="input" id="edit-title" placeholder="title" />
+      <label class="inp-label">Title:</label>
+      <input class="input" type="time" id="edit-time" placeholder="time" />
+      <label class="inp-label">Time:</label>
+      <input class="input" id="edit-description" placeholder="description" />
+      <label class="inp-label">Description:</label>
+      <button class="btn btn-add" onclick="update()">Update</button>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+  <!-- ! View more buttons -->
+  <div id="td" class='hidden'>
+    <h1 class="heading">Your Todo Details</h1>
+    <div class="details">
+      <p> <span class="suc-p">Title:</span> <span id="t-title"></span> </p>
+      <p><span class="suc-p">Time:</span> <span id="t-time"></span></p>
+      <p><span class="suc-p">Description:</span> <span id="t-desc"></span> </p>
+      <p><span class="suc-p">Status:</span> <span id="t-status"></span> </p>
+    </div>
+  </div>
+
+
+
+
+  <script src="./js/all.js"></script>
+</body>
+
+</html>
