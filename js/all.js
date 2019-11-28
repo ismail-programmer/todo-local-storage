@@ -38,6 +38,7 @@ ele.alltodos.addEventListener("click", e => {
       todos.splice(j, 1);
       display(todos, ele.alltodos);
       localStorage.setItem("todos", JSON.stringify(todos));
+      todos.forEach((todo, i) => loadingCheck(todo, i));
     }
 
     // ! view details div
