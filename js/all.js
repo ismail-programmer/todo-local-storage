@@ -60,7 +60,7 @@ ele.alltodos.addEventListener("click", e => {
       ele.tdetails.className = "hidden";
     }
     //  ! checked for backend
-    if (e.target.id === `todo-label-${i}`) {
+    if (e.target.id === `todo-label-${j}`) {
       setTimeout(function() {
         let current = e.target.previousElementSibling.checked;
         todos[j].checked = current;
@@ -112,10 +112,10 @@ function formatTime(formatTime) {
 
 // ! cheked for loading window
 const loadingCheck = (todo, i) => {
-  ele.alltodos.children[i].children[0].checked = todo.checked;
+  ele.alltodos.children[i].children[0].checked = todo.checked
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
-todos.forEach((todo, i) => loadingCheck(todo, i));
+window.onload = ()=> todos.forEach((todo, i) => loadingCheck(todo, i));
 
 display(todos, ele.alltodos);
