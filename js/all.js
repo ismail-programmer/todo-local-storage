@@ -16,6 +16,7 @@ var ele = {
 
 function td() {
   ele.tdetails.className = "visible";
+  
   ele.all.className = "hidden";
   ele.editDiv.className = "hidden";
 }
