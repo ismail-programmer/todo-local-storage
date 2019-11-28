@@ -9,18 +9,12 @@ class Todo {
     this.time = time;
     this.description = description;
     this.comp = comp;
+    this.checked = false
   }
 }
 
 // ! general variables
-var extra;
-var i;
 var ele = {
-  all: document.getElementById("allDiv"),
-  alltodos: document.getElementById("alltodos"),
-  new: document.getElementById("newDiv"),
-  tdetails: document.getElementById("td"),
-  editDiv: document.getElementById("edit"),
   feildTitle: document.getElementById("title"),
   feildTime: document.getElementById("time"),
   feildDes: document.getElementById("description"),
@@ -28,14 +22,7 @@ var ele = {
   inner: document.querySelector(".inner"),
   suc_title: document.getElementById("suc-title"),
   suc_time: document.getElementById("suc-time"),
-  suc_des: document.getElementById("suc-des"),
-  det_title: document.getElementById("t-title"),
-  det_time: document.getElementById("t-time"),
-  det_desc: document.getElementById("t-desc"),
-  det_status: document.getElementById("t-status"),
-  edit_title: document.getElementById("edit-title"),
-  edit_time: document.getElementById("edit-time"),
-  edit_desc: document.getElementById("edit-description")
+  suc_des: document.getElementById("suc-des")
 };
 
 //  ! making new todo

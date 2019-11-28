@@ -3,17 +3,8 @@ let todos = JSON.parse(localStorage.getItem("todos")) || [];
 var ele = {
   all: document.getElementById("allDiv"),
   alltodos: document.getElementById("alltodos"),
-  new: document.getElementById("newDiv"),
   tdetails: document.getElementById("td"),
   editDiv: document.getElementById("edit"),
-  feildTitle: document.getElementById("title"),
-  feildTime: document.getElementById("time"),
-  feildDes: document.getElementById("description"),
-  outer: document.querySelector(".outer"),
-  inner: document.querySelector(".inner"),
-  suc_title: document.getElementById("suc-title"),
-  suc_time: document.getElementById("suc-time"),
-  suc_des: document.getElementById("suc-des"),
   det_title: document.getElementById("t-title"),
   det_time: document.getElementById("t-time"),
   det_desc: document.getElementById("t-desc"),
@@ -44,9 +35,7 @@ const display = (todos, alltodos) => {
 ele.alltodos.addEventListener("click", e => {
   for (let j = 0; j < todos.length; j++) {
     if (e.target.id === `del-${j}`) {
-      let idDel = e.target.parentNode.parentNode;
-      idDel.parentNode.removeChild(idDel);
-      todos = todos.splice(j, 1);
+      todos.splice(j, 1);
       display(todos, ele.alltodos);
       localStorage.setItem("todos", JSON.stringify(todos));
     }
@@ -57,12 +46,6 @@ ele.alltodos.addEventListener("click", e => {
       ele.det_title.innerHTML = todos[j].title;
       ele.det_time.innerHTML = todos[j].time;
       ele.det_desc.innerHTML = todos[j].description;
-      var chb = e.target.parentNode.parentNode.firstChild.checked;
-      if (chb) {
-        todos[j].comp = "Completed";
-      } else {
-        todos[j].comp = "Incomplete";
-      }
       ele.det_status.innerHTML = todos[j].comp;
     }
 
@@ -76,10 +59,21 @@ ele.alltodos.addEventListener("click", e => {
       ele.all.className = "hidden";
       ele.tdetails.className = "hidden";
     }
+    //  ! checked for backend
+    if (e.target.id === `todo-label-${i}`) {
+      setTimeout(function() {
+        let current = e.target.previousElementSibling.checked;
+        todos[j].checked = current;
+        if (current) {
+          todos[j].comp = "Completed";
+        } else {
+          todos[j].comp = "Incomplete";
+        }
+        localStorage.setItem("todos", JSON.stringify(todos));
+      }, 1);
+    }
   }
 });
-
-//@    todos = JSON.parse(localStorage.getItem('todos'))
 
 // ! update todo data  function
 
@@ -94,6 +88,9 @@ function update() {
   todos[extra].description = ele.edit_desc.value;
   document.getElementById(`todo-label-${extra}`).innerHTML = updatedTitle;
   localStorage.setItem("todos", JSON.stringify(todos));
+  ele.editDiv.className = "hidden";
+  ele.all.className = "visible";
+  ele.tdetails.className = "hidden";
 }
 
 // ! Timer function
@@ -112,5 +109,13 @@ function formatTime(formatTime) {
   }
   return formatTime;
 }
+
+// ! cheked for loading window
+const loadingCheck = (todo, i) => {
+  ele.alltodos.children[i].children[0].checked = todo.checked;
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
+
+todos.forEach((todo, i) => loadingCheck(todo, i));
 
 display(todos, ele.alltodos);
