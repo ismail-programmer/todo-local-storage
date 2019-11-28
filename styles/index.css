@@ -1,46 +1,12 @@
-@import 'https://fonts.googleapis.com/css?family=Playball&display=swap';
+@import "https://fonts.googleapis.com/css?family=Playball&display=swap";
 * {
   font-family: Playball;
 }
-
-/* ! voice */
-/* 
-.words {
-  max-width: 500px;
-  margin: 50px auto;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem 1rem 5rem;
-  background: -webkit-gradient(
-      linear,
-      0 0,
-      0 100%,
-      from(#d9eaf3),
-      color-stop(4%, #fff)
-    )
-    0 4px;
-  background-size: 100% 3rem;
-  position: relative;
-  line-height: 3rem;
+a {
+  text-decoration: none !important;
 }
 
-p {
-  margin: 0 0 3rem;
-}
-
-.words:before {
-  content: '';
-  position: absolute;
-  width: 4px;
-  top: 0;
-  left: 30px;
-  bottom: 0;
-  border: 1px solid;
-  border-color: transparent #efe4e4;
-} */
-
-/* header div */
+/* ! header div */
 .header {
   height: auto;
   background: #f0f0f0;
@@ -51,7 +17,7 @@ p {
   padding: 1%;
 }
 
-/*  general heading */
+/* !   general heading */
 
 .heading {
   text-align: center;
@@ -267,13 +233,13 @@ p {
 
 /*  ! checkbox */
 
-input[type='checkbox']:checked ~ .cb-l {
+input[type="checkbox"]:checked ~ .cb-l {
   animation: scale 0.5s cubic-bezier(0.5, 1.2, 0, 1.58);
   background-image: url(../images/chk.png);
   text-decoration: line-through;
   color: #aaa !important;
 }
-input[type='checkbox'] {
+input[type="checkbox"] {
   display: none;
 }
 .cb-l {

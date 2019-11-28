@@ -9,7 +9,7 @@ class Todo {
     this.time = time;
     this.description = description;
     this.comp = comp;
-    this.checked = false
+    this.checked = false;
   }
 }
 

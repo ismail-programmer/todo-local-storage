@@ -113,10 +113,10 @@ function formatTime(formatTime) {
 
 // ! cheked for loading window
 const loadingCheck = (todo, i) => {
-  ele.alltodos.children[i].children[0].checked = todo.checked
+  ele.alltodos.children[i].children[0].checked = todo.checked;
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
-window.onload = ()=> todos.forEach((todo, i) => loadingCheck(todo, i));
+window.onload = () => todos.forEach((todo, i) => loadingCheck(todo, i));
 
 display(todos, ele.alltodos);
